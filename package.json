@@ -1,0 +1,24 @@
+{
+  "name": "piWsn",
+  "version": "0.0.0",
+  "description": "Wireless Sensor Network using raspberry Pi",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "xbee",
+    "wireless",
+    "senor",
+    "network",
+    "zigbee",
+    "raspberry",
+    "Pi",
+    "node"
+  ],
+  "author": "Soongil Jung",
+  "license": "ISC",
+  "dependencies": {
+    "serialport": "^4.0.1"
+  }
+}
