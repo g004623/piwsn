@@ -1,0 +1,7 @@
+set const
+set autoindent
+set tabsize 4
+
+syntax "HTML" "\.html"
+color brightyellow "\<(div|var|class|id|body|script|span|this|src|function|console|log)\>"
+color green "\<(prepend|append|get|post)\>"
