@@ -33,7 +33,7 @@ port.on('open',function(err){
 //--- socket.io for sending to server fo Wireless Sensor Net 
 
 var io = require('socket.io-client');
-var socket = io.connect('http://192.168.0.119:8080', {reconnect: true});
+var socket = io.connect('http://192.168.0.119:7532', {reconnect: true});
 
 // Add a connect listener
 socket.on('connect', function (socket) {
