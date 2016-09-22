@@ -16,6 +16,14 @@ var wsnSchema = mongoose.Schema({
 
 var wsnDB1 = mongoose.model('wsnDB1',wsnSchema);
 
+// onoff
+var Gpio = require('onoff').Gpio, led =new Gpio(17,'out');// rasp pin11
+
+setTimeout( function(){
+	led.writeSync(0);
+	led.unexport();
+},5000);
+
 //--- serial port for xbee
 
 var SerialPort = require('serialport');
@@ -33,7 +41,7 @@ port.on('open',function(err){
 //--- socket.io for sending to server fo Wireless Sensor Net 
 
 var io = require('socket.io-client');
-var socket = io.connect('http://192.168.0.119:7532', {reconnect: true});
+var socket = io.connect('http://192.168.110.10:7532', {reconnect: true});
 
 // Add a connect listener
 socket.on('connect', function (socket) {
@@ -43,9 +51,9 @@ socket.on('connect', function (socket) {
 
 port.on('data',function (data){
 
-	socket.emit('CH0', 'me', data);
+	socket.emit('CH1', 'me', data);
 
-    console.log('RXD  : '+data);
+//    console.log('RXD  : '+data);
 	
 	var wsnIn = new wsnDB1({wsnData:data});
 	wsnIn.save( function( err, wsnIn ){
