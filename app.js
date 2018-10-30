@@ -53,13 +53,13 @@ port.on('data',function (data){
 
 	socket.emit('CH1', 'me', data);
 
-//    console.log('RXD  : '+data);
+    console.log('RXD  : '+data);
 	
 	var wsnIn = new wsnDB1({wsnData:data});
-	wsnIn.save( function( err, wsnIn ){
-		if(err) return console.error(err);	
-	    console.log('SAVED: '+data);
-	});	
+	//wsnIn.save( function( err, wsnIn ){
+	//	if(err) return console.error(err);	
+	//    console.log('SAVED: '+data);
+	//});	
 });
 
 port.on('error', function(err) {
